@@ -2,8 +2,8 @@
 
 #include <QWidget>
 #include <boost/optional.hpp>
-//#include <pajlada/signals/signal.hpp>
-//#include <pajlada/signals/signalholder.hpp>
+#include <pajlada/signals/signal.hpp>
+#include <pajlada/signals/signalholder.hpp>
 
 namespace chatterino {
 
@@ -18,7 +18,7 @@ public:
     explicit BaseWidget(QWidget *parent, Qt::WindowFlags f = Qt::WindowFlags());
 
     virtual float scale() const;
-    // pajlada::Signals::Signal<float> scaleChanged; // REMOVE
+    pajlada::Signals::Signal<float> scaleChanged;
 
     boost::optional<float> overrideScale() const;
     void setOverrideScale(boost::optional<float>);
@@ -44,12 +44,12 @@ protected:
 
 private:
     float scale_{1.f};
-    boost::optional<float> overrideScale_ = boost::none;
+    boost::optional<float> overrideScale_;
     QSize scaleIndependantSize_;
 
     std::vector<BaseWidget *> widgets_;
 
-    // pajlada::Signals::SignalHolder signalHolder_; // REMOVED
+    pajlada::Signals::SignalHolder signalHolder_;
 
     friend class BaseWindow;
 };

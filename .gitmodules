@@ -1,0 +1,12 @@
+[submodule "appbase/lib/settings"]
+	path = appbase/lib/settings
+	url = https://github.com/pajlada/settings
+[submodule "appbase/lib/signals"]
+	path = appbase/lib/signals
+	url = https://github.com/pajlada/signals.git
+[submodule "appbase/lib/serialize"]
+	path = appbase/lib/serialize
+	url = https://github.com/pajlada/serialize.git
+[submodule "appbase/lib/rapidjson"]
+	path = appbase/lib/rapidjson
+	url = https://github.com/Tencent/rapidjson.git

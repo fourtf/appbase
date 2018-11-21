@@ -1,11 +1,11 @@
 #include "widgets/BaseWidget.hpp"
 
 // REMOVED
-//#include "Application.hpp"
-//#include "debug/Log.hpp"
-//#include "singletons/Settings.hpp"
-//#include "singletons/Theme.hpp"
-//#include "widgets/BaseWindow.hpp"
+#include "Application.hpp"
+#include "debug/Log.hpp"
+#include "singletons/Settings.hpp"
+#include "singletons/Theme.hpp"
+#include "widgets/BaseWindow.hpp"
 
 #include <QChildEvent>
 #include <QDebug>
@@ -19,13 +19,13 @@ BaseWidget::BaseWidget(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
 {
     // REMOVED
-    // this->theme = getApp()->themes;
+    this->theme = getApp()->themes;
 
-    // this->signalHolder_.managedConnect(this->theme->updated, [this]() {
-    //    this->themeChangedEvent();
+    this->signalHolder_.managedConnect(this->theme->updated, [this]() {
+        this->themeChangedEvent();
 
-    //    this->update();
-    //});
+        this->update();
+    });
 }
 
 float BaseWidget::scale() const
@@ -50,7 +50,7 @@ void BaseWidget::setScale(float value)
     this->scale_ = value;
 
     this->scaleChangedEvent(this->scale());
-    // this->scaleChanged.invoke(this->getScale()); // REMOVED
+    this->scaleChanged.invoke(this->scale());
 
     this->setScaleIndependantSize(this->scaleIndependantSize());
 }
