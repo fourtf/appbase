@@ -1,10 +1,9 @@
 #pragma once
 
-#include "BaseWidget.hpp"
+#include "widgets/BaseWidget.hpp"
 
 #include <functional>
-// REMOVED
-//#include <pajlada/signals/signalholder.hpp>
+#include <pajlada/signals/signalholder.hpp>
 
 class QHBoxLayout;
 struct tagMSG;
@@ -53,7 +52,7 @@ public:
 
     Flags getFlags();
 
-    // pajlada::Signals::NoArgSignal closing; // REMOVED
+    pajlada::Signals::NoArgSignal closing;
 
 protected:
     virtual bool nativeEvent(const QByteArray &eventType, void *message,
@@ -114,9 +113,8 @@ private:
         std::vector<Button *> buttons;
     } ui_;
 
-    // REMOVED
-    // pajlada::Signals::SignalHolder connections_;
-    // std::vector<pajlada::Signals::ScopedConnection> managedConnections_;
-};
+    pajlada::Signals::SignalHolder connections_;
+    std::vector<pajlada::Signals::ScopedConnection> managedConnections_;
+};  // namespace chatterino
 
 }  // namespace chatterino

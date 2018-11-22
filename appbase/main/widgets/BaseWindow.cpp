@@ -7,13 +7,12 @@
 #include "singletons/Theme.hpp"
 #include "singletons/WindowManager.hpp"
 #include "util/PostToThread.hpp"
+#include "util/Shortcut.hpp"
 #include "util/WindowsHelper.hpp"
 #include "widgets/Label.hpp"
 #include "widgets/TooltipWidget.hpp"
 #include "widgets/helper/EffectLabel.hpp"
-#include "widgets/helper/Shortcut.hpp"
 
-#include <QtGlobal>
 #include <QApplication>
 #include <QDebug>
 #include <QDesktopWidget>
