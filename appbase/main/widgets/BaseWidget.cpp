@@ -1,6 +1,5 @@
 #include "widgets/BaseWidget.hpp"
 
-// REMOVED
 #include "Application.hpp"
 #include "debug/Log.hpp"
 #include "singletons/Settings.hpp"
