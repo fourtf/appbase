@@ -4,16 +4,17 @@
 #
 #-------------------------------------------------
 
-!AB_INCLUDE {
-    #QT += core gui widgets
-    #TARGET = main
-    #TEMPLATE = app
-    #SOURCES += main.cpp
+!AB_NOT_STANDALONE {
+    message(appbase standalone)
+    QT += core gui widgets
+    TARGET = main
+    TEMPLATE = app
+    SOURCES += main.cpp
 
-    ## https://bugreports.qt.io/browse/QTBUG-27018
-    #equals(QMAKE_CXX, "clang++")|equals(QMAKE_CXX, "g++") {
-    #    TARGET = bin/appbase
-    #}
+    # https://bugreports.qt.io/browse/QTBUG-27018
+    equals(QMAKE_CXX, "clang++")|equals(QMAKE_CXX, "g++") {
+        TARGET = bin/appbase
+    }
 }
 
 
