@@ -63,19 +63,28 @@ macx {
 SOURCES += \
     $$PWD/ABSettings.cpp \
     $$PWD/ABTheme.cpp \
+    $$PWD/common/ChatterinoSetting.cpp \
+    $$PWD/debug/Benchmark.cpp \
     $$PWD/singletons/Fonts.cpp \
     $$PWD/util/WindowsHelper.cpp \
     $$PWD/widgets/BaseWidget.cpp \
     $$PWD/widgets/BaseWindow.cpp \
     $$PWD/widgets/Label.cpp \
     $$PWD/widgets/TooltipWidget.cpp \
+    $$PWD/widgets/helper/Button.cpp \
     $$PWD/widgets/helper/EffectLabel.cpp \
+    $$PWD/widgets/helper/TitlebarButton.cpp \
 
 HEADERS += \
     $$PWD/ABSettings.hpp \
     $$PWD/ABTheme.hpp \
+    $$PWD/common/ChatterinoSetting.hpp \
+    $$PWD/common/Singleton.hpp \
+    $$PWD/debug/AssertInGuiThread.hpp \
+    $$PWD/debug/Benchmark.hpp \
     $$PWD/debug/Log.hpp \
     $$PWD/singletons/Fonts.hpp \
+    $$PWD/util/Helpers.hpp \
     $$PWD/util/PostToThread.hpp \
     $$PWD/util/RapidJsonSerializeQString.hpp \
     $$PWD/util/Shortcut.hpp \
@@ -84,4 +93,6 @@ HEADERS += \
     $$PWD/widgets/BaseWindow.hpp \
     $$PWD/widgets/Label.hpp \
     $$PWD/widgets/TooltipWidget.hpp \
+    $$PWD/widgets/helper/Button.hpp \
     $$PWD/widgets/helper/EffectLabel.hpp \
+    $$PWD/widgets/helper/TitlebarButton.hpp \

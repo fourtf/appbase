@@ -1,6 +1,5 @@
 #include "widgets/helper/EffectLabel.hpp"
 #include "singletons/Theme.hpp"
-#include "widgets/splits/SplitHeader.hpp"
 
 #include <QBrush>
 #include <QPainter>
