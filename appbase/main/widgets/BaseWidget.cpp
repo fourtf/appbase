@@ -1,9 +1,8 @@
 #include "widgets/BaseWidget.hpp"
 
-#include "Application.hpp"
+#include "ABSettings.hpp"
+#include "ABTheme.hpp"
 #include "debug/Log.hpp"
-#include "singletons/Settings.hpp"
-#include "singletons/Theme.hpp"
 #include "widgets/BaseWindow.hpp"
 
 #include <QChildEvent>
@@ -18,7 +17,7 @@ BaseWidget::BaseWidget(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
 {
     // REMOVED
-    this->theme = getApp()->themes;
+    this->theme = getTheme();
 
     this->signalHolder_.managedConnect(this->theme->updated, [this]() {
         this->themeChangedEvent();

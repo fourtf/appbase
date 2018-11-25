@@ -1,11 +1,9 @@
 #include "BaseWindow.hpp"
 
-#include "Application.hpp"
+#include "ABSettings.hpp"
+#include "ABTheme.hpp"
 #include "boost/algorithm/algorithm.hpp"
 #include "debug/Log.hpp"
-#include "singletons/Settings.hpp"
-#include "singletons/Theme.hpp"
-#include "singletons/WindowManager.hpp"
 #include "util/PostToThread.hpp"
 #include "util/Shortcut.hpp"
 #include "util/WindowsHelper.hpp"
@@ -18,6 +16,10 @@
 #include <QDesktopWidget>
 #include <QIcon>
 #include <functional>
+
+#ifdef CHATTERINO
+#    include "singletons/WindowManager.hpp"
+#endif
 
 #ifdef USEWINSDK
 #    include <ObjIdl.h>
@@ -284,13 +286,13 @@ void BaseWindow::wheelEvent(QWheelEvent *event)
     {
         if (event->delta() > 0)
         {
-            getSettings()->uiScale.setValue(WindowManager::clampUiScale(
-                getSettings()->uiScale.getValue() + 1));
+            getSettings()->setClampedUiScale(
+                getSettings()->getClampedUiScale() + 0.1);
         }
         else
         {
-            getSettings()->uiScale.setValue(WindowManager::clampUiScale(
-                getSettings()->uiScale.getValue() - 1));
+            getSettings()->setClampedUiScale(
+                getSettings()->getClampedUiScale() - 0.1);
         }
     }
 }
@@ -458,7 +460,9 @@ void BaseWindow::moveTo(QWidget *parent, QPoint point, bool offset)
 void BaseWindow::resizeEvent(QResizeEvent *)
 {
     // Queue up save because: Window resized
+#ifdef CHATTERINO
     getApp()->windows->queueSave();
+#endif
 
     this->moveIntoDesktopRect(this);
 
@@ -468,7 +472,9 @@ void BaseWindow::resizeEvent(QResizeEvent *)
 void BaseWindow::moveEvent(QMoveEvent *event)
 {
     // Queue up save because: Window position changed
+#ifdef CHATTERINO
     getApp()->windows->queueSave();
+#endif
 
     BaseWidget::moveEvent(event);
 }
@@ -581,7 +587,7 @@ void BaseWindow::updateScale()
     auto scale =
         this->nativeScale_ * (this->flags_ & DisableCustomScaling
                                   ? 1
-                                  : getApp()->windows->getUiScaleValue());
+                                  : getABSettings()->getClampedUiScale());
     this->setScale(scale);
 
     for (auto child : this->findChildren<BaseWidget *>())
@@ -887,6 +893,7 @@ bool BaseWindow::handleNCHITTEST(MSG *msg, long *result)
 
         return true;
     }
+    return false;
 #else
     return false;
 #endif

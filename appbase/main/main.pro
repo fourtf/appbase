@@ -17,7 +17,6 @@
     }
 }
 
-
 #DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000
 
@@ -66,6 +65,7 @@ SOURCES += \
     $$PWD/common/ChatterinoSetting.cpp \
     $$PWD/debug/Benchmark.cpp \
     $$PWD/singletons/Fonts.cpp \
+    $$PWD/util/FunctionEventFilter.cpp \
     $$PWD/util/WindowsHelper.cpp \
     $$PWD/widgets/BaseWidget.cpp \
     $$PWD/widgets/BaseWindow.cpp \
@@ -73,6 +73,7 @@ SOURCES += \
     $$PWD/widgets/TooltipWidget.cpp \
     $$PWD/widgets/helper/Button.cpp \
     $$PWD/widgets/helper/EffectLabel.cpp \
+    $$PWD/widgets/helper/SignalLabel.cpp \
     $$PWD/widgets/helper/TitlebarButton.cpp \
 
 HEADERS += \
@@ -84,6 +85,8 @@ HEADERS += \
     $$PWD/debug/Benchmark.hpp \
     $$PWD/debug/Log.hpp \
     $$PWD/singletons/Fonts.hpp \
+    $$PWD/util/Clamp.hpp \
+    $$PWD/util/FunctionEventFilter.hpp \
     $$PWD/util/Helpers.hpp \
     $$PWD/util/PostToThread.hpp \
     $$PWD/util/RapidJsonSerializeQString.hpp \
@@ -95,4 +98,5 @@ HEADERS += \
     $$PWD/widgets/TooltipWidget.hpp \
     $$PWD/widgets/helper/Button.hpp \
     $$PWD/widgets/helper/EffectLabel.hpp \
+    $$PWD/widgets/helper/SignalLabel.hpp \
     $$PWD/widgets/helper/TitlebarButton.hpp \

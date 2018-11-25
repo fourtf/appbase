@@ -1,5 +1,4 @@
 #include "widgets/helper/EffectLabel.hpp"
-#include "singletons/Theme.hpp"
 
 #include <QBrush>
 #include <QPainter>

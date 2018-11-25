@@ -1,7 +1,5 @@
 #include "Label.hpp"
 
-#include "Application.hpp"
-
 #include <QPainter>
 
 namespace chatterino {
@@ -16,9 +14,7 @@ Label::Label(BaseWidget *parent, QString text, FontStyle style)
     , text_(text)
     , fontStyle_(style)
 {
-    auto app = getApp();
-
-    this->connections_.managedConnect(app->fonts->fontChanged,
+    this->connections_.managedConnect(getFonts()->fontChanged,
                                       [this] { this->updateSize(); });
 }
 
@@ -86,13 +82,11 @@ QSize Label::minimumSizeHint() const
 
 void Label::paintEvent(QPaintEvent *)
 {
-    auto app = getApp();
-
     QPainter painter(this);
-    QFontMetrics metrics = app->fonts->getFontMetrics(
-        this->getFontStyle(), this->scale() * 96.f / this->logicalDpiX() *
-                                  this->devicePixelRatioF());
-    painter.setFont(app->fonts->getFont(
+    QFontMetrics metrics = getFonts()->getFontMetrics(
+        this->getFontStyle(),
+        this->scale() * 96.f / this->logicalDpiX() * this->devicePixelRatioF());
+    painter.setFont(getFonts()->getFont(
         this->getFontStyle(), this->scale() * 96.f / this->logicalDpiX() *
                                   this->devicePixelRatioF()));
 
@@ -118,10 +112,8 @@ void Label::paintEvent(QPaintEvent *)
 
 void Label::updateSize()
 {
-    auto app = getApp();
-
     QFontMetrics metrics =
-        app->fonts->getFontMetrics(this->fontStyle_, this->scale());
+        getFonts()->getFontMetrics(this->fontStyle_, this->scale());
 
     int width = metrics.width(this->text_) + (2 * this->getOffset());
     int height = metrics.height();

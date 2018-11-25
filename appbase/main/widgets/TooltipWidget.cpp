@@ -1,8 +1,7 @@
 #include "TooltipWidget.hpp"
 
-#include "Application.hpp"
+#include "ABTheme.hpp"
 #include "singletons/Fonts.hpp"
-#include "singletons/Theme.hpp"
 
 #include <QDebug>
 #include <QDesktopWidget>
@@ -29,8 +28,6 @@ TooltipWidget::TooltipWidget(BaseWidget *parent)
     : BaseWindow(parent, BaseWindow::TopMost)
     , displayText_(new QLabel())
 {
-    auto app = getApp();
-
     this->setStyleSheet("color: #fff; background: #000");
     this->setWindowOpacity(0.8);
     this->updateFont();
@@ -49,7 +46,7 @@ TooltipWidget::TooltipWidget(BaseWidget *parent)
     this->setLayout(layout);
 
     this->fontChangedConnection_ =
-        app->fonts->fontChanged.connect([this] { this->updateFont(); });
+        getFonts()->fontChanged.connect([this] { this->updateFont(); });
 }
 
 TooltipWidget::~TooltipWidget()
@@ -77,10 +74,8 @@ void TooltipWidget::scaleChangedEvent(float)
 
 void TooltipWidget::updateFont()
 {
-    auto app = getApp();
-
     this->setFont(
-        app->fonts->getFont(FontStyle::ChatMediumSmall, this->scale()));
+        getFonts()->getFont(FontStyle::ChatMediumSmall, this->scale()));
 }
 
 void TooltipWidget::setText(QString text)

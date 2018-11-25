@@ -1,6 +1,6 @@
 #include "common/ChatterinoSetting.hpp"
 
-#include "singletons/Settings.hpp"
+#include "ABSettings.hpp"
 
 namespace chatterino {
 

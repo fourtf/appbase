@@ -5,7 +5,7 @@
 #include <QDesktopWidget>
 #include <QPainter>
 
-#include "singletons/Theme.hpp"
+#include "ABTheme.hpp"
 #include "util/FunctionEventFilter.hpp"
 
 namespace chatterino {

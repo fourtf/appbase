@@ -1,12 +1,15 @@
 #include "singletons/Fonts.hpp"
 
-#include "Application.hpp"
+#include "ABSettings.hpp"
 #include "debug/AssertInGuiThread.hpp"
-#include "singletons/Settings.hpp"
-#include "singletons/WindowManager.hpp"
 
 #include <QDebug>
 #include <QtGlobal>
+
+#ifdef CHATTERINO
+#    include "Application.hpp"
+#    include "singletons/WindowManager.hpp"
+#endif
 
 #ifdef Q_OS_WIN32
 #    define DEFAULT_FONT_FAMILY "Segoe UI"
@@ -22,11 +25,25 @@
 #endif
 
 namespace chatterino {
+namespace {
+    int getBoldness()
+    {
+#ifdef CHATTERINO
+        getSettings()->boldScale.getValue()
+#else
+        return QFont::Bold;
+#endif
+    }
+}  // namespace
+
+Fonts *Fonts::instance = nullptr;
 
 Fonts::Fonts()
     : chatFontFamily("/appearance/currentFontFamily", DEFAULT_FONT_FAMILY)
     , chatFontSize("/appearance/currentFontSize", DEFAULT_FONT_SIZE)
 {
+    Fonts::instance = this;
+
     this->fontsByType_.resize(size_t(FontStyle::EndType));
 }
 
@@ -56,10 +73,12 @@ void Fonts::initialize(Settings &, Paths &)
         },
         false);
 
+#ifdef CHATTERINO
     getSettings()->boldScale.connect(
         [this]() {
             assertInGuiThread();
 
+            // REMOVED
             getApp()->windows->incGeneration();
 
             for (auto &map : this->fontsByType_)
@@ -69,7 +88,8 @@ void Fonts::initialize(Settings &, Paths &)
             this->fontChanged.invoke();
         },
         false);
-}
+#endif
+}  // namespace chatterino
 
 QFont Fonts::getFont(FontStyle type, float scale)
 {
@@ -115,13 +135,13 @@ Fonts::FontData Fonts::createFontData(FontStyle type, float scale)
             {FontStyle::ChatMediumSmall, {0.8f, false, QFont::Normal}},
             {FontStyle::ChatMedium, {1, false, QFont::Normal}},
             {FontStyle::ChatMediumBold,
-             {1, false, QFont::Weight(getSettings()->boldScale.getValue())}},
+             {1, false, QFont::Weight(getBoldness())}},
             {FontStyle::ChatMediumItalic, {1, true, QFont::Normal}},
             {FontStyle::ChatLarge, {1.2f, false, QFont::Normal}},
             {FontStyle::ChatVeryLarge, {1.4f, false, QFont::Normal}},
         };
-        sizeScale[FontStyle::ChatMediumBold] = {
-            1, false, QFont::Weight(getSettings()->boldScale.getValue())};
+        sizeScale[FontStyle::ChatMediumBold] = {1, false,
+                                                QFont::Weight(getBoldness())};
         auto data = sizeScale[type];
         return FontData(
             QFont(this->chatFontFamily.getValue(),
@@ -149,6 +169,11 @@ Fonts::FontData Fonts::createFontData(FontStyle type, float scale)
         QFont font(data.name, int(data.size * scale), data.weight, data.italic);
         return FontData(font);
     }
+}
+
+Fonts *getFonts()
+{
+    return Fonts::instance;
 }
 
 }  // namespace chatterino
