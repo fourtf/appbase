@@ -29,7 +29,7 @@ namespace {
     int getBoldness()
     {
 #ifdef CHATTERINO
-        getSettings()->boldScale.getValue()
+        return getSettings()->boldScale.getValue();
 #else
         return QFont::Bold;
 #endif

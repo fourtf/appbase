@@ -1,12 +1,9 @@
-#pragma once
+#ifndef AB_THEME_H
+#define AB_THEME_H
 
 #include <QBrush>
 #include <QColor>
 #include <common/ChatterinoSetting.hpp>
-
-#ifdef CHATTERINO
-#    include "singletons/Theme.hpp"
-#endif
 
 #ifdef AB_CUSTOM_THEME
 #    define AB_THEME_CLASS ABTheme
@@ -113,3 +110,8 @@ private:
 Theme *getTheme();
 
 }  // namespace AB_NAMESPACE
+
+#ifdef CHATTERINO
+#    include "singletons/Theme.hpp"
+#endif
+#endif

@@ -66,6 +66,7 @@ SOURCES += \
     $$PWD/debug/Benchmark.cpp \
     $$PWD/singletons/Fonts.cpp \
     $$PWD/util/FunctionEventFilter.cpp \
+    $$PWD/util/FuzzyConvert.cpp \
     $$PWD/util/WindowsHelper.cpp \
     $$PWD/widgets/BaseWidget.cpp \
     $$PWD/widgets/BaseWindow.cpp \
@@ -80,14 +81,20 @@ HEADERS += \
     $$PWD/ABSettings.hpp \
     $$PWD/ABTheme.hpp \
     $$PWD/common/ChatterinoSetting.hpp \
+    $$PWD/common/FlagsEnum.hpp \
+    $$PWD/common/Outcome.hpp \
     $$PWD/common/Singleton.hpp \
     $$PWD/debug/AssertInGuiThread.hpp \
     $$PWD/debug/Benchmark.hpp \
     $$PWD/debug/Log.hpp \
     $$PWD/singletons/Fonts.hpp \
     $$PWD/util/Clamp.hpp \
+    $$PWD/util/CombinePath.hpp \
+    $$PWD/util/DistanceBetweenPoints.hpp \
     $$PWD/util/FunctionEventFilter.hpp \
+    $$PWD/util/FuzzyConvert.hpp \
     $$PWD/util/Helpers.hpp \
+    $$PWD/util/LayoutHelper.hpp \
     $$PWD/util/PostToThread.hpp \
     $$PWD/util/RapidJsonSerializeQString.hpp \
     $$PWD/util/Shortcut.hpp \

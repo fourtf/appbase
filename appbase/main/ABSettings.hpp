@@ -1,4 +1,5 @@
-#pragma once
+#ifndef AB_SETTINGS_H
+#define AB_SETTINGS_H
 
 #include <rapidjson/document.h>
 #include <QString>
@@ -30,7 +31,7 @@ public:
 
     static AB_SETTINGS_CLASS *instance;
 
-    FloatSetting uiScale = {"/appearance/uiScale", 1};
+    FloatSetting uiScale = {"/appearance/uiScale2", 1};
     BoolSetting windowTopMost = {"/appearance/windowAlwaysOnTop", false};
 
     float getClampedUiScale() const;
@@ -44,3 +45,8 @@ Settings *getSettings();
 AB_SETTINGS_CLASS *getABSettings();
 
 }  // namespace AB_NAMESPACE
+
+#ifdef CHATTERINO
+#    include "singletons/Settings.hpp"
+#endif
+#endif

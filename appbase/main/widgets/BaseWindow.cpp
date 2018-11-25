@@ -18,6 +18,7 @@
 #include <functional>
 
 #ifdef CHATTERINO
+#    include "Application.hpp"
 #    include "singletons/WindowManager.hpp"
 #endif
 
