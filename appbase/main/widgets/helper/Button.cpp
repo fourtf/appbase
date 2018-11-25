@@ -8,7 +8,7 @@
 #include "ABTheme.hpp"
 #include "util/FunctionEventFilter.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 Button::Button(BaseWidget *parent)
     : BaseWidget(parent)
@@ -335,4 +335,4 @@ void Button::showMenu()
     this->menuVisible_ = true;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

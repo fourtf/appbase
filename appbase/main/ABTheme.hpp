@@ -14,7 +14,7 @@
 #    define AB_THEME_CLASS Theme
 #endif
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Theme;
 
@@ -112,4 +112,4 @@ private:
 // Otherwise implemented in ABTheme.cpp
 Theme *getTheme();
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

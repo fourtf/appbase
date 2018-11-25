@@ -2,11 +2,11 @@
 
 #include "ABSettings.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 void _registerSetting(std::weak_ptr<pajlada::Settings::SettingData> setting)
 {
     _actuallyRegisterSetting(setting);
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

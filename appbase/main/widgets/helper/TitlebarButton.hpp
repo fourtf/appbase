@@ -2,7 +2,7 @@
 
 #include "widgets/helper/Button.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 enum class TitleBarButtonStyle {
     None = 0,
@@ -29,4 +29,4 @@ private:
     TitleBarButtonStyle style_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

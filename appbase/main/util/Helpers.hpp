@@ -3,7 +3,7 @@
 #include <fmt/format.h>
 #include <QUuid>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 template <typename... Args>
 auto fS(Args &&... args)
@@ -43,7 +43,7 @@ static QString shortenString(const QString &str, unsigned maxWidth = 50)
     return shortened;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE
 
 namespace fmt {
 

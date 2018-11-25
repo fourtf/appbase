@@ -3,7 +3,7 @@
 #include <QShortcut>
 #include <QWidget>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 template <typename WidgetType, typename Func>
 inline void createShortcut(WidgetType *w, const char *key, Func func)
@@ -21,4 +21,4 @@ inline void createWindowShortcut(WidgetType *w, const char *key, Func func)
     QObject::connect(s, &QShortcut::activated, w, func);
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

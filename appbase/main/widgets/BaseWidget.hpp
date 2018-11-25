@@ -5,7 +5,7 @@
 #include <pajlada/signals/signal.hpp>
 #include <pajlada/signals/signalholder.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Theme;
 class BaseWindow;
@@ -54,4 +54,4 @@ private:
     friend class BaseWindow;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

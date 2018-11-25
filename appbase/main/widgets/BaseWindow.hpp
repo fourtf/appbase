@@ -9,7 +9,7 @@ class QHBoxLayout;
 struct tagMSG;
 typedef struct tagMSG MSG;
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Button;
 class EffectLabel;
@@ -115,6 +115,6 @@ private:
 
     pajlada::Signals::SignalHolder connections_;
     std::vector<pajlada::Signals::ScopedConnection> managedConnections_;
-};  // namespace chatterino
+};  // namespace AB_NAMESPACE
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

@@ -5,7 +5,7 @@
 #include <QMouseEvent>
 #include <QWidget>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class SignalLabel : public QLabel
 {
@@ -29,4 +29,4 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

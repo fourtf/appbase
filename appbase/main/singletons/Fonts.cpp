@@ -24,7 +24,7 @@
 #    endif
 #endif
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 namespace {
     int getBoldness()
     {
@@ -89,7 +89,7 @@ void Fonts::initialize(Settings &, Paths &)
         },
         false);
 #endif
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE
 
 QFont Fonts::getFont(FontStyle type, float scale)
 {
@@ -176,4 +176,4 @@ Fonts *getFonts()
     return Fonts::instance;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

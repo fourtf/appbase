@@ -2,7 +2,7 @@
 
 #include <QPainter>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 Label::Label(QString text, FontStyle style)
     : Label(nullptr, text, style)
@@ -127,4 +127,4 @@ int Label::getOffset()
     return this->hasOffset_ ? int(8 * this->scale()) : 0;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

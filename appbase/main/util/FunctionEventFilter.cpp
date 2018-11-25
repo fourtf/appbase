@@ -1,6 +1,6 @@
 #include "FunctionEventFilter.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 FunctionEventFilter::FunctionEventFilter(
     QObject *parent, std::function<bool(QObject *, QEvent *)> function)
@@ -14,4 +14,4 @@ bool FunctionEventFilter::eventFilter(QObject *watched, QEvent *event)
     return this->function_(watched, event);
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

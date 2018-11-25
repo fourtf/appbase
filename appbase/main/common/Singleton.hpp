@@ -2,7 +2,7 @@
 
 #include <boost/noncopyable.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Settings;
 class Paths;
@@ -23,4 +23,4 @@ public:
     }
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

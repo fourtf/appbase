@@ -6,7 +6,7 @@
 #include <QWidget>
 #include <pajlada/signals/signal.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class TooltipWidget : public BaseWindow
 {
@@ -38,4 +38,4 @@ private:
     pajlada::Signals::Connection fontChangedConnection_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

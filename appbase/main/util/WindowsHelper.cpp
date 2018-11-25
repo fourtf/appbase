@@ -2,7 +2,7 @@
 
 #ifdef USEWINSDK
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 typedef enum MONITOR_DPI_TYPE {
     MDT_EFFECTIVE_DPI = 0,
@@ -51,6 +51,6 @@ void flushClipboard()
     }
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE
 
 #endif

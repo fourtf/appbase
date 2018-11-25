@@ -5,7 +5,7 @@
 #include <QElapsedTimer>
 #include <boost/noncopyable.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class BenchmarkGuard : boost::noncopyable
 {
@@ -19,4 +19,4 @@ private:
     QString name_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

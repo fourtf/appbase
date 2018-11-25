@@ -40,7 +40,7 @@
 
 #include "widgets/helper/TitlebarButton.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 BaseWindow::BaseWindow(QWidget *parent, Flags _flags)
     : BaseWidget(parent,
@@ -901,4 +901,4 @@ bool BaseWindow::handleNCHITTEST(MSG *msg, long *result)
 #endif
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

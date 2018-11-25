@@ -1,6 +1,6 @@
 #include "ABTheme.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 namespace {
     double getMultiplierByTheme(const QString &themeName)
     {
@@ -150,7 +150,7 @@ void AB_THEME_CLASS::actuallyUpdate(double hue, double multiplier)
         //            QColor("#777"), QColor("#666")}};
 
         this->tabs.bottomLine = this->tabs.selected.backgrounds.regular.color();
-    }  // namespace chatterino
+    }  // namespace AB_NAMESPACE
 
     // Split
     bool flat = isLight_;
@@ -223,4 +223,4 @@ Theme *getTheme()
 }
 #endif
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

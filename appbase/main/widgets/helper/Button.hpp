@@ -11,7 +11,7 @@
 #include <QTimer>
 #include <QWidget>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Button : public BaseWidget
 {
@@ -86,4 +86,4 @@ private:
     std::unique_ptr<QMenu> menu_{};
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

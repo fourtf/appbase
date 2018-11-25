@@ -12,7 +12,7 @@
 #    include <Windows.h>
 #endif
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 TooltipWidget *TooltipWidget::getInstance()
 {
@@ -98,4 +98,4 @@ void TooltipWidget::leaveEvent(QEvent *)
     // clear parents event
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

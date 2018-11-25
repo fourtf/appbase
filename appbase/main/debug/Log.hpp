@@ -5,7 +5,7 @@
 #include <QDebug>
 #include <QTime>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 template <typename... Args>
 inline void log(const std::string &formatString, Args &&... args)
@@ -26,4 +26,4 @@ inline void log(const QString &formatString, Args &&... args)
     log(formatString.toStdString(), std::forward<Args>(args)...);
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

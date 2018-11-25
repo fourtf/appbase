@@ -13,7 +13,7 @@
 #    define AB_SETTINGS_CLASS Settings
 #endif
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Settings;
 
@@ -43,4 +43,4 @@ private:
 Settings *getSettings();
 AB_SETTINGS_CLASS *getABSettings();
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

@@ -12,7 +12,7 @@
 #include <array>
 #include <unordered_map>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Settings;
 class Paths;
@@ -89,4 +89,4 @@ private:
 
 Fonts *getFonts();
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

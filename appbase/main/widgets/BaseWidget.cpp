@@ -11,7 +11,7 @@
 #include <QLayout>
 #include <QtGlobal>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 BaseWidget::BaseWidget(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
@@ -149,4 +149,4 @@ void BaseWidget::themeChangedEvent()
     // Do any color scheme updates here
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

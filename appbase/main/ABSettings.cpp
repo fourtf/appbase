@@ -4,7 +4,7 @@
 
 #include "util/Clamp.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 std::vector<std::weak_ptr<pajlada::Settings::SettingData>> _settings;
 
@@ -125,4 +125,4 @@ AB_SETTINGS_CLASS *getABSettings()
     return AB_SETTINGS_CLASS::instance;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

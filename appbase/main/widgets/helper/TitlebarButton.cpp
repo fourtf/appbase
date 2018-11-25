@@ -2,7 +2,7 @@
 
 #include "ABTheme.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 TitleBarButton::TitleBarButton()
     : Button(nullptr)
@@ -131,4 +131,4 @@ void TitleBarButton::paintEvent(QPaintEvent *event)
     //    this->fancyPaint(painter);
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

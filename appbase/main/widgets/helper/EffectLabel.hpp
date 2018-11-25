@@ -10,7 +10,7 @@
 #include <QPaintEvent>
 #include <QWidget>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class EffectLabel : public Button
 {
@@ -38,4 +38,4 @@ private:
     Label label_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

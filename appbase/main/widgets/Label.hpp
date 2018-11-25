@@ -5,7 +5,7 @@
 
 #include <pajlada/signals/signalholder.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class Label : public BaseWidget
 {
@@ -47,4 +47,4 @@ private:
     pajlada::Signals::SignalHolder connections_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

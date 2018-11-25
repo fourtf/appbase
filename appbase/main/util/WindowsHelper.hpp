@@ -5,11 +5,11 @@
 #    include <Windows.h>
 #    include <boost/optional.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 boost::optional<UINT> getWindowDpi(HWND hwnd);
 void flushClipboard();
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE
 
 #endif

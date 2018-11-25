@@ -3,7 +3,7 @@
 #include <QBrush>
 #include <QPainter>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 EffectLabel::EffectLabel(BaseWidget *parent, int spacing)
     : Button(parent)
@@ -40,4 +40,4 @@ Label &EffectLabel2::getLabel()
     return this->label_;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

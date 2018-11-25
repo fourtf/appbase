@@ -1,6 +1,6 @@
 #include "widgets/helper/SignalLabel.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 SignalLabel::SignalLabel(QWidget *parent, Qt::WindowFlags f)
     : QLabel(parent, f)
@@ -38,4 +38,4 @@ void SignalLabel::mouseMoveEvent(QMouseEvent *event)
     event->ignore();
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

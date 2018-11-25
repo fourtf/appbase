@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-    using namespace chatterino;
+    using namespace AB_NAMESPACE;
 
     QApplication a(argc, argv);
 

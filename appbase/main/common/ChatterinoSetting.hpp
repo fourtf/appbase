@@ -3,7 +3,7 @@
 #include <QString>
 #include <pajlada/settings.hpp>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 void _registerSetting(std::weak_ptr<pajlada::Settings::SettingData> setting);
 
@@ -51,4 +51,4 @@ using IntSetting = ChatterinoSetting<int>;
 using StringSetting = ChatterinoSetting<std::string>;
 using QStringSetting = ChatterinoSetting<QString>;
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

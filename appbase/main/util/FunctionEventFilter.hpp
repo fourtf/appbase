@@ -4,7 +4,7 @@
 #include <QObject>
 #include <functional>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 class FunctionEventFilter : public QObject
 {
@@ -21,4 +21,4 @@ private:
     std::function<bool(QObject *, QEvent *)> function_;
 };
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

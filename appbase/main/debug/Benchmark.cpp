@@ -1,6 +1,6 @@
 #include "Benchmark.hpp"
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 BenchmarkGuard::BenchmarkGuard(const QString &_name)
     : name_(_name)
@@ -18,4 +18,4 @@ qreal BenchmarkGuard::getElapsedMs()
     return qreal(timer_.nsecsElapsed()) / 1000000.0;
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE

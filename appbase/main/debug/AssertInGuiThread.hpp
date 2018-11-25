@@ -4,7 +4,7 @@
 #include <QThread>
 #include <cassert>
 
-namespace chatterino {
+namespace AB_NAMESPACE {
 
 static void assertInGuiThread()
 {
@@ -13,4 +13,4 @@ static void assertInGuiThread()
 #endif
 }
 
-}  // namespace chatterino
+}  // namespace AB_NAMESPACE
