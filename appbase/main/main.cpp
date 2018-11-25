@@ -10,6 +10,8 @@
 
 int main(int argc, char *argv[])
 {
+    using namespace chatterino;
+
     QApplication a(argc, argv);
 
     auto path =
@@ -18,11 +20,11 @@ int main(int argc, char *argv[])
 
     QDir(path).mkdir(".");
 
-    new chatterino::Theme();
-    new chatterino::Settings(path);
-    new chatterino::Fonts();
+    new Settings(path);
+    new Fonts();
 
-    chatterino::BaseWindow widget(nullptr);
+    BaseWindow widget(nullptr, BaseWindow::EnableCustomFrame);
+    widget.setWindowTitle("asdf");
     widget.show();
 
     return a.exec();

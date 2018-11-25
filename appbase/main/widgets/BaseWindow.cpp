@@ -68,6 +68,8 @@ BaseWindow::BaseWindow(QWidget *parent, Flags _flags)
                          [] { getSettings()->uiScale.setValue(0); });
 
     //    QTimer::this->scaleChangedEvent(this->getScale());
+
+    this->resize(300, 300);
 }
 
 float BaseWindow::scale() const
@@ -102,7 +104,7 @@ void BaseWindow::init()
                 layout->addLayout(buttonLayout);
 
                 // title
-                Label *title = new Label("Chatterino");
+                Label *title = new Label;
                 QObject::connect(
                     this, &QWidget::windowTitleChanged,
                     [title](const QString &text) { title->setText(text); });

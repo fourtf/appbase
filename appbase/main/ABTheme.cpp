@@ -213,10 +213,13 @@ QColor AB_THEME_CLASS::blendColors(const QColor &color1, const QColor &color2,
 #ifndef AB_CUSTOM_THEME
 Theme *getTheme()
 {
-    static Theme theme;
-    theme.update();
+    static auto theme = [] {
+        auto theme = new Theme();
+        theme->update();
+        return theme;
+    }();
 
-    return &theme;
+    return theme;
 }
 #endif
 

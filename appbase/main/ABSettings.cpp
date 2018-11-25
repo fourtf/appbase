@@ -1,5 +1,7 @@
 #include "ABSettings.hpp"
 
+#include <QDebug>
+
 #include "util/Clamp.hpp"
 
 namespace chatterino {
@@ -16,6 +18,8 @@ void _actuallyRegisterSetting(
 
 AB_SETTINGS_CLASS::AB_SETTINGS_CLASS(const QString &settingsDirectory)
 {
+    AB_SETTINGS_CLASS::instance = this;
+
     QString settingsPath = settingsDirectory + "/settings.json";
 
     // get global instance of the settings library
@@ -107,12 +111,17 @@ Settings *getSettings()
 {
     static_assert(std::is_same_v<AB_SETTINGS_CLASS, Settings>,
                   "`AB_SETTINGS_CLASS` must be the same as `Settings`");
+
+    assert(AB_SETTINGS_CLASS::instance);
+
     return AB_SETTINGS_CLASS::instance;
 }
 #endif
 
 AB_SETTINGS_CLASS *getABSettings()
 {
+    assert(AB_SETTINGS_CLASS::instance);
+
     return AB_SETTINGS_CLASS::instance;
 }
 
