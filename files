@@ -1,6 +1,5 @@
 [?] ./common/DownloadManager.cpp
 [?] ./common/DownloadManager.hpp
-[x] ./common/FlagsEnum.hpp
 [x] ./common/LinkParser.cpp
 [x] ./common/LinkParser.hpp
 [x] ./common/NetworkCommon.hpp

@@ -16,11 +16,7 @@ namespace AB_NAMESPACE {
 
 TooltipWidget *TooltipWidget::getInstance()
 {
-    static TooltipWidget *tooltipWidget = nullptr;
-    if (tooltipWidget == nullptr)
-    {
-        tooltipWidget = new TooltipWidget();
-    }
+    static TooltipWidget *tooltipWidget = new TooltipWidget();
     return tooltipWidget;
 }
 

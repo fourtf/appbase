@@ -14,6 +14,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QDesktopWidget>
+#include <QFont>
 #include <QIcon>
 #include <functional>
 
@@ -76,6 +77,11 @@ BaseWindow::BaseWindow(QWidget *parent, Flags _flags)
 float BaseWindow::scale() const
 {
     return this->overrideScale().value_or(this->scale_);
+}
+
+float BaseWindow::qtFontScale() const
+{
+    return this->scale() / this->nativeScale_;
 }
 
 BaseWindow::Flags BaseWindow::getFlags()
@@ -426,7 +432,10 @@ EffectLabel *BaseWindow::addTitleBarLabel(std::function<void()> onClicked)
 
 void BaseWindow::changeEvent(QEvent *)
 {
-    TooltipWidget::getInstance()->hide();
+    if (this->isVisible())
+    {
+        TooltipWidget::getInstance()->hide();
+    }
 
 #ifdef USEWINSDK
     if (this->ui_.maxButton)
@@ -565,11 +574,13 @@ bool BaseWindow::nativeEvent(const QByteArray &eventType, void *message,
 #endif
 }
 
-void BaseWindow::scaleChangedEvent(float)
+void BaseWindow::scaleChangedEvent(float scale)
 {
 #ifdef USEWINSDK
     this->calcButtonsSizes();
 #endif
+
+    this->setFont(getFonts()->getFont(FontStyle::UiTabs, this->qtFontScale()));
 }
 
 void BaseWindow::paintEvent(QPaintEvent *)
@@ -591,6 +602,7 @@ void BaseWindow::updateScale()
         this->nativeScale_ * (this->flags_ & DisableCustomScaling
                                   ? 1
                                   : getABSettings()->getClampedUiScale());
+
     this->setScale(scale);
 
     for (auto child : this->findChildren<BaseWidget *>())

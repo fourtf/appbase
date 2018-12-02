@@ -16,7 +16,7 @@ public:
     static TooltipWidget *getInstance();
 
     TooltipWidget(BaseWidget *parent = nullptr);
-    virtual ~TooltipWidget() override;
+    ~TooltipWidget() override;
 
     void setText(QString text);
     void setWordWrap(bool wrap);

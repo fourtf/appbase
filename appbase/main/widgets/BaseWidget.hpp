@@ -31,6 +31,8 @@ public:
     void setScaleIndependantWidth(int value);
     void setScaleIndependantHeight(int value);
 
+    float qtFontScale() const;
+
 protected:
     virtual void childEvent(QChildEvent *) override;
     virtual void showEvent(QShowEvent *) override;

@@ -49,6 +49,7 @@ public:
     void moveTo(QWidget *widget, QPoint point, bool offset = true);
 
     virtual float scale() const override;
+    float qtFontScale() const;
 
     Flags getFlags();
 
@@ -115,6 +116,8 @@ private:
 
     pajlada::Signals::SignalHolder connections_;
     std::vector<pajlada::Signals::ScopedConnection> managedConnections_;
-};  // namespace AB_NAMESPACE
+
+    friend class BaseWidget;
+};
 
 }  // namespace AB_NAMESPACE

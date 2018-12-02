@@ -110,6 +110,18 @@ void BaseWidget::setScaleIndependantHeight(int value)
         QSize(this->scaleIndependantSize_.width(), value));
 }
 
+float BaseWidget::qtFontScale() const
+{
+    if (auto window = dynamic_cast<BaseWindow *>(this->window()))
+    {
+        return this->scale() / window->nativeScale_;
+    }
+    else
+    {
+        return this->scale();
+    }
+}
+
 void BaseWidget::childEvent(QChildEvent *event)
 {
     if (event->added())
