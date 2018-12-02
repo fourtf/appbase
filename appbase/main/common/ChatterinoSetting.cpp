@@ -1,6 +1,6 @@
 #include "common/ChatterinoSetting.hpp"
 
-#include "ABSettings.hpp"
+#include "BaseSettings.hpp"
 
 namespace AB_NAMESPACE {
 

@@ -1,7 +1,7 @@
 #include "widgets/BaseWidget.hpp"
 
-#include "ABSettings.hpp"
-#include "ABTheme.hpp"
+#include "BaseSettings.hpp"
+#include "BaseTheme.hpp"
 #include "debug/Log.hpp"
 #include "widgets/BaseWindow.hpp"
 

@@ -6,7 +6,7 @@
 #include <common/ChatterinoSetting.hpp>
 
 #ifdef AB_CUSTOM_THEME
-#    define AB_THEME_CLASS ABTheme
+#    define AB_THEME_CLASS BaseTheme
 #else
 #    define AB_THEME_CLASS Theme
 #endif
@@ -106,7 +106,7 @@ private:
 };
 
 // Implemented in parent project if AB_CUSTOM_THEME is set.
-// Otherwise implemented in ABTheme.cpp
+// Otherwise implemented in BaseThemecpp
 Theme *getTheme();
 
 }  // namespace AB_NAMESPACE

@@ -60,8 +60,8 @@ macx {
 }
 
 SOURCES += \
-    $$PWD/ABSettings.cpp \
-    $$PWD/ABTheme.cpp \
+    $$PWD/BaseSettings.cpp \
+    $$PWD/BaseTheme.cpp \
     $$PWD/common/ChatterinoSetting.cpp \
     $$PWD/debug/Benchmark.cpp \
     $$PWD/singletons/Fonts.cpp \
@@ -78,8 +78,8 @@ SOURCES += \
     $$PWD/widgets/helper/TitlebarButton.cpp \
 
 HEADERS += \
-    $$PWD/ABSettings.hpp \
-    $$PWD/ABTheme.hpp \
+    $$PWD/BaseSettings.hpp \
+    $$PWD/BaseTheme.hpp \
     $$PWD/common/ChatterinoSetting.hpp \
     $$PWD/common/FlagsEnum.hpp \
     $$PWD/common/Outcome.hpp \

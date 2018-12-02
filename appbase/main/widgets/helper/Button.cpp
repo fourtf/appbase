@@ -5,7 +5,7 @@
 #include <QDesktopWidget>
 #include <QPainter>
 
-#include "ABTheme.hpp"
+#include "BaseTheme.hpp"
 #include "util/FunctionEventFilter.hpp"
 
 namespace AB_NAMESPACE {

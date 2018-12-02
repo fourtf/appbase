@@ -1,6 +1,6 @@
 #include "singletons/Fonts.hpp"
 
-#include "ABSettings.hpp"
+#include "BaseSettings.hpp"
 #include "debug/AssertInGuiThread.hpp"
 
 #include <QDebug>

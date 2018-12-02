@@ -1,7 +1,7 @@
 #include "BaseWindow.hpp"
 
-#include "ABSettings.hpp"
-#include "ABTheme.hpp"
+#include "BaseSettings.hpp"
+#include "BaseTheme.hpp"
 #include "boost/algorithm/algorithm.hpp"
 #include "debug/Log.hpp"
 #include "util/PostToThread.hpp"
